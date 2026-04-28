@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", function() {
             searchBar.computedStyleMap.visiblility = "visible";
             searchBar.classList.add("open");
             this.setAttribute("aria-expanded", "true");
-            searchInput.focus();
+            //searchInput.focus();
         });
     }
     searchClose.addEventListener("click",function (){
