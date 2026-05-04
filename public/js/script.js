@@ -4,12 +4,16 @@ document.addEventListener("DOMContentLoaded", function() {
     const searchInput = document.getElementById("searchInput");
     const searchClose = document.getElementById("searchClose");
 
+
     for (var i = 0; i < allButtons.length; i++) {
+        
         allButtons[i].addEventListener("click", function () {
-            searchBar.computedStyleMap.visiblility = "visible";
+            console.log("in")
+            searchBar.style.visiblility = "visible";
             searchBar.classList.add("open");
             this.setAttribute("aria-expanded", "true");
             //searchInput.focus();
+            
         });
     }
     searchClose.addEventListener("click",function (){
