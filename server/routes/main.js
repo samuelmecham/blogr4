@@ -18,7 +18,7 @@ router.get("/", async (req, res) => {
       .limit(perPage)
       .exec();
 
-    // Count is deprecated - please use countDocuments({}) instead
+    // Count is deprecated - please use countDocuments({}) instead  left at 2:00
     // const count = await Post.count();
     const count = await post.countDocuments({});
     const nextPage = parseInt(page) + 1;
