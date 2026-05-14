@@ -1,4 +1,3 @@
-
 require("dotenv").config();
 
 const cookieParser = require("cookie-parser");
@@ -16,7 +15,6 @@ connectDB();
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-
 app.use(cookieParser());
 app.use(methodOverride("_method"));
 
@@ -28,6 +26,8 @@ app.use(
     store: MongoStore.create({
       mongoUrl: process.env.MONGO_URI,
     }),
+    //cookie: {maxAge:new Date(Date.now() + 3600000)};
+    // Date.now() -30 * 24 * 60 * 60 * 1000;
   })
 );
 
@@ -37,5 +37,6 @@ app.set("layout", "./layouts/main");
 app.set("view engine", "ejs");
 
 app.use("/", require("./server/routes/main"));
+app.use("/", require("./server/routes/admin"));
 
 app.listen(PORT, () => console.log(`server is running on port: ${PORT}`));
